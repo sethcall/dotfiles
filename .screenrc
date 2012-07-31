@@ -1,0 +1,23 @@
+cape ^Hh # Instead of Control-a, make the escape/command character be Control-b
+
+autodetach on # Autodetach session on hangup instead of terminating screen completely
+
+termcapinfo xterm* ti@:te@
+
+startup_message off # Turn off the splash screen
+
+defscrollback 30000 # Use a 30000-line scrollback bufferi
+caption string "%?%F%{= Bk}%? %C%A %D %d-%m-%Y %{= kB} %t%= %?%F%{= Bk}%:%{= wk}%? %n "
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+vbell off
+
+screen -t "shell" 1
+stuff "echo shell1\012"
+screen -t "shell2" 2
+stuff "echo shell2\012"
+screen -t "shell3" 3
+stuff "echo shell3\012"
+screen -t "shell4" 4
+stuff "echo shell4\012"
+
